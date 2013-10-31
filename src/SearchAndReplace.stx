@@ -1,0 +1,95 @@
+Search and Replace
+
+  Problem
+
+   There are a number of cases in which it is not possible to put a tag at
+   a place in a page where you want to insert text.  These include the inside
+   of '&lt;script&gt;', '&lt;style&gt;', and '&lt![CDATA[' tags.  Most of these
+   cases can probably be handled by dynamically including the entire tag, since
+   the contents are likely to either be irrelevent to structured editing or
+   very hard to mark for dynamic replacement without ruining structured
+   editing.  For example, most editors will not parse (much less execute)
+   scripts, and while they may use a stylesheet, it will be hard to make a
+   valid stylesheet that is also dynamic.
+
+  Proposal
+
+   o Case-by-case: Make a TAL statement that specifies placeholder/expression
+     pairs, and replaces all contained instances of the placeholder text with
+     the value of the expression.
+
+     For example::
+
+      <disabled script tal:put="IMGDIR here/images/absolute_url">
+      for (var i=0; i < elements.length; i++)
+        if (elements[i].type == 'img')
+          elements[i].src = 'IMGDIR' + elements[i].src;
+      <disabled /script>
+
+   o Notation: Make a TAL statement that specifies placeholder delimiters, and
+   replaces all contained path expressions with the specified delimiters::
+
+    <disabled script tal:paths="${ }">
+    for (var i=0; i < elements.length; i++)
+      if (elements[i].type == 'img')
+        elements[i].src = '${here/images/absolute_url}' + elements[i].src;
+    <disabled /script>
+
+
+<hr solid id=comments_below>
+
+
+peterbe (Jul 16, 2001 3:49 am; Comment #1) *Editor Remark Requested* --
+ -1
+ Why not something like this::
+ 
+  <disabled script tal:replace="peter here/title">
+   alert("You are in the peter page");
+  <disabled /script>
+ 
+ Which is rendered as::
+ 
+  <disabled script>
+   alert("You are in the My Title page");
+  <disabled /script>
+ 
+ Disabling the script and style tag will make it impossible to test (as in to test it **with** the script) offline zpt files in Dreamweaver or GoLive.
+ 
+ Keeps the number of TAL operators down. Will it confuse with 'tal:replace="here/title"' ??
+ 
+d.maurer (Jul 16, 2001 3:50 am; Comment #2)  --
+ <pre>
+ >       for (var i=0; i &lt; elements.length; i++)
+ >         if (elements[i].type == 'img')
+ >           elements[i].src = 'IMGDIR' + elements[i].src;
+ </pre>
+ I would prefer, if replacement were not done based on literal text but
+ would use the variable syntax used elsewhere in TALES, e.g. $IMGDIR would
+ be replaced by the value of "IMGDIR".
+ 
+ Also note, that such replacements will often require context specific quoting.
+ Probably, a set of quoting functions should be made available, including
+ "url_quote", "html_quote", "string_quote".
+ 
+d.maurer (Jul 16, 2001 3:51 am; Comment #3)  --
+ <pre>
+ >    o Notation: Make a TAL statement that specifies placeholder delimiters, and
+ >    replaces all contained path expressions with the specified delimiters::
+ > 
+ >     &lt;disabled script tal:paths="${ }">
+ >     for (var i=0; i &lt; elements.length; i++)
+ >       if (elements[i].type == 'img')
+ >         elements[i].src = '${here/images/absolute_url}' + elements[i].src;
+ >     &lt;disabled /script>
+ </pre>
+ I do not understand what is proposed here.
+ 
+peterbe (Jul 16, 2001 3:52 am; Comment #4)  --
+ oh fk, my structured text was mangled. I hope you see what it was meant to be.
+ 
+mindlace (Jul 18, 2001 1:51 pm; Comment #5)  --
+ +1 "dummy" text can be real for offline purposes.
+ 
+poster (Jul 31, 2001 11:51 am; Comment #6)  --
+ +1 for both proposals
+ 

@@ -1,0 +1,5 @@
+TAL errors can occur at two different times:
+
+1. Edit Time (see EditErrorHandlingStrategies)
+
+2. Render Time (see RenderErrorHandlingStrategies)

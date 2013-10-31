@@ -1,0 +1,61 @@
+ZPT - Zope Page Templates
+
+  This is the home page for the Zope Page Template project. This
+  project seeks to establish website production harmony through the seamless
+  integration of the three separate domains: Presentation, Content and Logic.
+  
+  First time here? Please start with VisionStatement. Things evolve quickly, so
+  keep an eye of RecentChanges.
+
+  - "Download releases", http://www.zope.org/Members/4am/ZPT of the software.  
+    Also see the ReleasePlan and ChangeLog.
+
+  - Use ProposedChanges page to discuss new features.
+
+  - There is a [FAQ], some [Examples], and a 
+    "Mailing list", http://mail.zope.org/mailman/listinfo/zpt
+
+  - A SimpleTutorial!
+
+  - Some parts of the tutorial have been adapted into articles:
+    <a href="http://www.zope.org/Documentation/Articles/ZPT1">Part One</a>,
+    <a href="http://www.zope.org/Documentation/Articles/ZPT2">Part Two</a>
+
+  - VisionStatement
+
+  - Overview documentation
+
+    o IntroductionForDTMLers
+
+    o Jim's "Presentation Templates", http://www.zope.org/Members/jim/Info/IPC9/PresentationTemplates/index.htm,
+      presentation at the 9th International
+      Python conference. This is a bit out of date, but should give
+      a general feel for page templates.
+
+    o An early draft PythonExpressionReference
+
+    o DeveloperNotes for those who want to develop Products using ZPT.
+
+    o "Tone's METAL Howto", http://www.zope.org/Members/tone/METAL
+      gives a brief introduction to macros.
+
+  - RiskFactors
+
+  - UseCases
+
+  - LanguageSpecifications
+
+    - Our canonical AttributeLanguage definition
+ 
+    - [TAL]
+
+    - [TALES]
+
+    - [METAL]
+
+  - [Architecture]
+
+  - ChatSessions
+
+
+Project leader: fred@zope.com

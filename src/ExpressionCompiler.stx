@@ -1,0 +1,10 @@
+The expression compiler is used to compile expression source
+into possibly more effeciently executed form.
+
+Methods:
+
+  compile(src) -- Return an opaque data structure used for later execution.
+
+    Arguments:
+
+      src -- The source to be compiled

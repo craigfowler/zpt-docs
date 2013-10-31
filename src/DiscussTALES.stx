@@ -1,0 +1,25 @@
+Discuss TALES
+
+  This is the main page for proposing changes to TALES.  Please add a sub-page
+  for each proposal, and discuss it in comments to that page.
+
+  Proposals
+
+    o VariablesInPaths
+ 
+  (Implemented in ZPT 1.3)
+
+    o EliminatePathModifiers
+
+    o UserVariable
+
+  (Implemented in ZPT 1.2)
+
+    o ModuleAccessInTALES - Provide access to imported Python modules through
+      a builtin variable.
+
+    o ActOnlyIfPathExists - Provide a convenient way to perform a TAL action
+      if a path resolves, but do nothing if it does not.
+
+    o PathExpressionVariants - Change 'exists' and 'nocall' from TALES
+      expression types into optional path expression prefixes.

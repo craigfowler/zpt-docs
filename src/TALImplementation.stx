@@ -1,0 +1,32 @@
+This is the implementation that TAL implementations must provide
+
+Methods:
+
+  compileFromDOM(src, expressionCompiler) -- Compile TAL src for later 
+    processing.
+
+    Arguments:
+
+        src -- The TAL source as a DOM tree
+
+        expressionCompiler -- An ExpressionCompiler implementatation.
+
+    An opaque data structure is returned that can later be used to 
+    render or extract macro data.
+
+  renderText(ctal, engine) -- Render TAL output as text
+
+    Arguments:
+
+       ctal -- The output from compileFromDOM.
+
+       engine -- an ExpressionEngine.
+
+  findMacro(ctal, name) -- Fine a named macro definition
+    for use by a referencing template.
+
+    Arguments:
+
+       ctal -- The output from compileFromDOM.
+
+       name -- The name of the macro to find.

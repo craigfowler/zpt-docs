@@ -1,0 +1,5 @@
+methods:
+
+  getContext(**builtins) -- Return an expression context.
+   
+    The keyword arguments are builtin variable names and their bindings.

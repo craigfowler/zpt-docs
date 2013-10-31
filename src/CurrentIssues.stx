@@ -1,0 +1,14 @@
+This is where we capture outstanding issues that need to be 
+resolved for this project.
+
+  o How do we handle !doctype and xml declarations, and possibly
+    xml-processing instructions?
+ 
+    They are by definition outside the element/dom structure, and therefore
+    cannot be fetched through METAL-macros.  Upgrading the !doctype of every
+    page that shares a particular macro should not be necessary.
+ 
+    Perhaps something like xml-processing instructions could be used?
+
+  o Should there be a special syntax for applying text formats?
+ 

@@ -1,0 +1,49 @@
+Proposed Changes
+
+  If you have an idea for a new feature, please add a link to it here.  Once
+  there has been sufficient discussion, we'll have a straw poll and add the
+  features that have enough support.  See ClosedProposals for proposals which
+  have either been implemented or rejected.
+
+  TALES (Expressions)
+  
+    o VariablesInPaths - Allow variable expansion in Path Expressions
+  
+    o ExpressionAliases - Make capitalized aliases for expression functions
+
+  TAL (Statements)
+
+    o RemoveInsaneConstructs - Disallow some of the cruftier feature
+      combinations.
+
+    o ReplaceInnerText - Insert text inside of singly-nested tags
+
+    o SearchAndReplace - Insert text at placeholders
+
+    o BringBackDummy - Bring back the dedicated dummy directive
+      to always exclude elements.
+
+    o CommentDirective - Provide a way to comment the tal/metal directives.
+
+    o HTMLTALOptionsAllow - value-less attributes in HTML mode.
+
+    o OptionalInAs - allow 'in' and 'as' in repeat and define.
+
+    o PluralSynonyms - allow either 'content' or 'contents', 'attribute' or 
+      'attributes', etc.
+
+    o StructureAsDefault - structure rending should be default, i.e. no translating < to &lt;, etc.
+
+  METAL (Macros)
+
+    o WholePageMacros - Do the Right Thing when using an entire page as a macro
+
+    o EditingExpandedMacros - Allow Macros to be designated as editable in their expanded state, to facilitate rapid application development
+
+    o ExpandedMacroIndentation - make expanded Macros increase their indentation by the amount the replaced element is indented
+
+  Page Templates
+
+    o tal:on-error="default" - Make it the default behavior to save typing
+
+    o NewIcons - The current ZPT icon needs to be replaced.

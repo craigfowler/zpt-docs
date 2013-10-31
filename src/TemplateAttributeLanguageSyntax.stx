@@ -1,0 +1,144 @@
+Template Attribute Language (TAL) Syntax
+
+  - The EBNF grammar will be a guide to implementers.  We need to have
+    a formal grammar document for this little language, to avoid
+    ambiguities (especially if there may be multiple implementations).
+
+  Synopsis
+
+    TAL Statements are attributes from a distinguished namespace.
+    Since the XML parser will handle the conversion of these
+    attributes into data structures in the DOM, all that a TAL parser
+    needs to do is search the DOM for TAL attributes and parse the
+    attribute values.
+
+    The first step in parsing the 'define' and 'attributes' statements
+    is to split the statement into parts at isolated semicolons, and
+    replace doubled semicolons in the parts with single ones.  This
+    implies that semicolons in expressions must be escaped by doubling
+    them.  This processing is not used in other statements since they
+    do not consist of semicolon-separated parts.  An odd number of
+    semicolons is interpreted as a number of double (i.e. escaped)
+    semicolons followed by a single (i.e. unescaped) semicolon.
+
+    In the examples below, 'z:' is used for the TAL namespace, and TALES
+    is used for expressions.
+
+  TAL Statement Names and Syntax
+
+    The following statements can have one or more parts (separated by
+    semicolons), each of which has the same syntax:
+
+    define::
+
+      (['local'] | 'global') Name Expression
+
+    attributes::
+
+      AttrName Expression
+
+    The following statements must have exactly one part:
+
+    condition::
+
+      Expression
+
+    insert::
+
+      (['text'] | 'structure') Expression
+
+    replace::
+
+      (['text'] | 'structure') Expression
+
+    repeat::
+
+      Name Expression
+
+    The following statements are more properly part of [METAL]:
+
+    define-macro::
+
+      Name
+
+    use-macro::
+
+      Expression
+
+    define-slot::
+
+      Name
+
+    fill-slot::
+
+      Name
+ 
+
+    Non-Terminals::
+    
+      Name       ::= ([a-zA-Z_)([a-zA-Z0-9_)*
+      AttrName   ::= XML Attribute Name with optional Namespace
+      Expression ::= Any non-empty string
+
+  Examples
+   ::
+
+    <span z:insert="here/id" />
+
+    <p z:define="x template/title; global five python:2+3"
+       z:insert="text var:x"></p>
+
+    <p z:repeat="car value:here/autos">
+      <span z:replace="var:car" />
+    </p>
+
+    <ul>
+       <li z:repeat="car python:['honda', 'subaru', 'acura']">
+         <span z:insert='var:car'>Car Name</span>
+       </li>
+    </ul>
+
+
+<hr solid id=comments_below>
+
+
+tcoram (Jan 30, 2001 9:50 am; Comment #4)  --
+
+ Given::
+
+   >     define::
+   >       (['local'] | 'global') Name Expression
+
+ 
+ with the example:
+ 
+
+   >     <p z:define="x template/title; global five python:2+3"
+   >        z:insert="text var:x"></p>
+
+ 
+ |global| sticks out like a sore thumb. Without |as|, it is hard to tell which 
+ is the left hand of the assignment and which is the right.
+ 
+ How about::
+
+   >     define::
+   > 
+   >       (['local:'] | 'global:')Name Expression
+
+ 
+ then for example::
+ 
+      <p z:define="x template/title; global:five python:2+3"
+         z:insert="text var:x"></p>
+ 
+hansa (Jul 4, 2001 11:33 am; Comment #5)  --
+ seems, that by 'insert' 'content' is meant. plz sync w TAL Spec 1.2 8-)
+ 
+hansa (Jul 9, 2001 9:06 am; Comment #6)  --
+ <pre>
+ >       Name       ::= ([a-zA-Z_)([a-zA-Z0-9_)*
+ </pre>
+ better: Name       ::= Letter ( Letter | Digit )*
+ also note the EBNF is not up to this and the specs
+ 

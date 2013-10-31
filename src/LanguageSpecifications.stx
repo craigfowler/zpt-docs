@@ -1,0 +1,18 @@
+Zope Page Templates rely on three languages for expressing 
+templates:
+
+  [TAL] -- The Template AttributeLanguage provides the basic
+    mechanisms for expressing dynamic content.
+
+  [TALES] -- The TAL Expression Syntax is a standard notation for expression
+    types used to compute TAL data.
+
+  [METAL] -- The Macro Expansion TAL provides a mechanism for reusing
+     templates, or parts of templates, in other templates.
+
+All of the above languages are described abstractly. We anticipate 
+implementations of these languages other than the implementation in Zope.
+
+To find out about the Zope Page Template implementation of these languages, see the [Architecture].
+
+LanguageTripTests exercise the syntax and semantics.

@@ -1,0 +1,47 @@
+I think that::
+
+  <tr tal:dummy="">.....</tr>
+
+is more obvious than::
+
+  <tr tal:replace="nothing">.....</tr>
+
+That is, I think a dedicated tag would make dummy or
+example (I'd be happy with tal:example.) elements easier
+to spot.
+
+
+<hr solid id=comments_below>
+
+
+peterbe (Jun 12, 2001 6:24 am; Comment #1)  --
+ I'm just a user, but my instinctive feel is that
+ 'dummy' or 'example' should not be implemented.
+ 
+ <pre>
+ >   &lt;tr tal:replace="nothing">.....&lt;/tr>
+ </pre>
+ 
+ ...*does* feel very natural.
+ 
+n.larosa (Jun 13, 2001 4:29 am; Comment #2)  --
+ Well, this overlaps with the CommentDirective proposal. Is tal:comment more pleasant than tal:dummy ? I hope so.
+ 
+peterbe (Jul 16, 2001 3:53 am; Comment #3)  --
+ -1
+ 
+ go tal:comment !
+ 
+mindlace (Jul 18, 2001 2:04 pm; Comment #4)  --
+ -1 but how about tal:replace="structure nothing"?
+ 
+n.larosa (Jul 30, 2001 8:43 am; Comment #6)  --
+ I guess I now understand the difference between the CommentDirective and BringBackDummy.
+ 
+ A <tt>tal:comment</tt> attribute would be erased by itself, leaving the tag in place, while a <tt>tal:dummy</tt> attribute would make the whole tag disappear.
+ 
+ Is this correct? If so, I see the need for something dummy-like. <tt>tal:replace="nothing"</tt> is too verbose, and does not clearly express the fact that this is a comment. I would use the tal:comment in place of the <tt>tal:dummy</tt> one, though.
+ 
+ On the other hand, the standard HTML comment syntax leaks to the generated HTML pages, something to be avoided. And there's no such option in XML, generally speaking.
+ 
+ A <tt>&lt;span tal:comment="SQL data here" /&gt;</tt> tag would not impact the designer's layout, while <tt>&lt;span tal:comment=""&gt;Jim, please no italics. Thanks.&lt;/span&gt;</tt> would be visible.

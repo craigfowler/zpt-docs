@@ -1,0 +1,29 @@
+Discuss TAL
+
+  This is the main page for proposing changes to TAL.  Please add a sub-page
+  for each proposal, and discuss it in comments to that page.
+
+  Proposals
+
+    o 
+
+<hr solid id=comments_below>
+
+
+lalo (May 6, 2001 6:54 am; Comment #1)  --
+ There isn't a comment facility. Sometimes it's handy to put comments in the code... what about a simple tal:comment construct?
+ 
+ (of course I can use *ML comments, but it would be nice to have comments that are stripped from the output like dtml-comment)
+ 
+n.larosa (May 22, 2001 4:52 am; Comment #2)  --
+ tal:comment : I second this! Also tried to propose this on the mailing list, but GvR wasn't interested. :^( See
+ 
+ http://mail.zope.org/pipermail/zpt/2001-May/001091.html
+ 
+ and subsequent ones.
+ 
+ If it is useful in DTML, I cannot understand why it would not be useful in ZPT.
+ 
+evan (May 23, 2001 5:03 pm; Comment #3)  --
+ The equivalent of dtml-comment is &lt;span tal:replace="nothing"&gt;My Comments&lt;/span&gt; or &lt;span tal:replace="nothing"&gt;&lt;!-- My Comments --&gt;&lt;/span&gt;
+ 

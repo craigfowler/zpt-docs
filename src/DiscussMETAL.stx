@@ -1,0 +1,16 @@
+Discuss METAL
+
+  This is the main page for proposing changes to METAL.  Please add a sub-page
+  for each proposal, and discuss it in comments to that page.
+
+  Proposals
+
+    o The MacroExtension feature is planned for integration in [METAL Specification 1.1].
+
+<hr solid id=comments_below>
+
+
+dmahaut (May 12, 2003 2:42 pm; Comment #1) *Editor Remark Requested* --
+ Is it possible to use < metal:use-macro="here/master_page/macros/copyright" > with a global variable such as < metal:use-macro=variable > so as to wrap a page with the navigation frame for viewing and wrap the same page with no frame for printing ?
+ Thanks
+ 

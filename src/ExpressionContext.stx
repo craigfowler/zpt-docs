@@ -1,0 +1,53 @@
+An expression context is responsible for holding the state of the TAL
+interpreter, and for evaluating compiled TALES expressions in that
+context.
+
+Methods:
+
+  beginScope() -- Begin a (local) name scope.
+
+  endScope() -- End a scope.  Remove all local variable and loop definitions
+    added since the corresponding beginScope().
+
+  setLocal(name, value) -- Set a local variable.
+
+    Arguments:
+
+       name -- The name to be set
+
+       value -- The value to bind to the name.
+
+  setGlobal(name, value) -- Set a global variable.
+
+    Arguments:
+
+       name -- The name to be set
+
+       value -- The value to bind to the name.
+
+
+  setRepeat(name, cexpr) -- Set up repeat information, and return an iterator.
+
+       name -- The name to be used for the local and loop variables
+
+       cexpr -- The (compiled) expression to evaluate to get the data 
+         used for repetition.
+
+       The iterator has the IteratorInterface.
+
+  evaluate(cexpr) -- Return the raw value of the (compiled) expression.
+
+  evaluateValue(cexpr) -- Return the raw value of the (compiled) expression.
+
+  evaluateBoolean(cexpr) -- Return the value of the (compiled) expression
+  as true or false.
+
+  evaluateText(cexpr) -- Return the value of the (compiled) expression.
+  If the raw value is not a string, an object that satisfies the DOM text
+  node interface, or None, raise TALESTypeError.
+
+  evaluateStructure(cexpr) -- Return the value of the (compiled) expression.
+  If the raw value is not a DOM fragment or None, raise TALESTypeError.
+
+  evaluateMacro(cexpr) -- Return the value of the (compiled) expression.
+  If the raw value is not a compiled macro definition, raise TALESTypeError.

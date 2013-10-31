@@ -1,0 +1,7 @@
+These are proposals which have either been implemented or rejected.
+
+Implemented
+
+    o DisappearingTags - Tags that aren't rendered
+
+    o PageProperties - Supply a page with data or meta-data.

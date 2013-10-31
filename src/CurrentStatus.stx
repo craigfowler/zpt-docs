@@ -1,0 +1,25 @@
+- 23May01 - ZPT is stable, and almost feature-complete.  Bugfixing and discussion of possible enhancements continues.
+
+- 30Mar01 - ZPT 1.0 released
+
+  - Collection of requirements for the next feature release begins
+
+- 22feb01 - A core team has been assembled. The plans are:
+
+  - Solidify the specification. Clean up and clarify.
+
+  - Start with the code we got, or start fresh and work towards a solid implementation.
+
+  - Release 1.0 and optimize until performance is on par with DTML.
+
+- 16feb01 - Presentation Templates alpha(?) has been unleashed (http://www.zope.org/Members/tcoram/PresentationTemplates) 
+
+  - We are looking for feedback.
+
+  - We are in need of examples.
+
+- A more formal specification need to be produced for TAL/TALES.
+
+
+<hr solid id=comments_below>
+ 

@@ -1,0 +1,14 @@
+An iterator keeps track of the current state of a TAL repetition statement,
+and updates the local variable associated with it.
+
+Methods:
+
+  next() -- advance to the next repetition. Returns true until the iterator
+  is exhausted, then returns false.
+
+  number() -- returns the number of the current repetition, counting up
+  from one.
+
+  start() -- return true during the first repetition, otherwise false.
+
+  end() -- return true during the last repetition, otherwise false.

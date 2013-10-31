@@ -1,0 +1,63 @@
+Macro Expansion for TAL  (or METAL)
+
+  <style type="text/css"><!--
+    .editableDocument { font-size: 115%; }
+    .editableDocument h4 { margin-bottom: 0px; }
+    .editableDocument h4 + pre { margin-top: 3px; }
+    .editableDocument pre { font-size: 100%;
+                            padding-left: 0px;
+                            width: 75%; }
+    .editableDocument code { background-color: white;
+                             border-bottom: thin dashed black;
+                             font-size: 96%; }
+  --></style>
+
+  Macros provide a way to define a chunk of presentation in one template, and
+  share it in others, so that changes to the macro are immediately reflected
+  in all of the places that share it.
+
+  Macros are a special set of TAL statements that are processed separately
+  from other statements.  There are statements to define macros and macro
+  slots, and to use macros and provide macro arguments.  When a template
+  which uses METAL macros is rendered, it expands them before processing
+  other TAL statements.
+
+  PageTemplates implement METAL, and expand all of the
+  macros used in a template when generating its source, as well as when
+  rendering it.  This allows macros to be viewed in-place.
+
+  See the METAL specifications for details of what METAL provides:
+
+  - [METAL Specification 1.0] is implemented in Zope 2 and Zope 3.0.
+
+  - "METAL Specification 1.1":MetalSpecification11 is implemented in Zope
+    3.1.
+
+  See DiscussMETAL for discussion of proposals for future specifications.
+
+<hr solid id=comments_below>
+
+emiliano (Mar 13, 2001 4:27 am; Comment #3)  --
+ If the macros are unfolded in full it is essential that it be very clear to
+ the user which parts are editable, especially if you're editing a macro that
+ includes static parts (non-slots) or that calls other macros itself. Assuming
+ that there's some kind of access control scheme in place, this can get quite
+ tricky.
+ 
+
+From hospital_pass Thu Sep 6 13:33:41 +0000 2007
+From: hospital_pass
+Date: Thu, 06 Sep 2007 13:33:41 +0000
+Subject: Link Broken: Metal Specification 1.0
+Message-ID: <20070906133341+0000@wiki.zope.org>
+
+The link to Metal Specification 1.0 does not function. Page missing?
+
+From simon Thu Sep 6 20:15:29 +0000 2007
+From: simon
+Date: Thu, 06 Sep 2007 20:15:29 +0000
+Subject: Link Broken: Metal Specification 1.0
+Message-ID: <20070906201529+0000@wiki.zope.org>
+In-Reply-To: <20070906133341+0000@wiki.zope.org>
+
+Thanks for the report, I have fixed the old page.
