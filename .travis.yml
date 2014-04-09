@@ -1,3 +1,5 @@
 language: python
+script:
+    - true
 notifications:
     email: false
